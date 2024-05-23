@@ -1,1 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Enlace a la hoja de estilos CSS externa -->
+    <link rel="stylesheet" href="/estilo.css">
+    <!-- Título de la página -->
+    <title>Parqueo</title>
+</head>
+<body>
+    <!-- Título principal de la página -->
+    <h1>Registro de Parqueo</h1>
+    <!-- Subtítulo para la Sección A -->
+    <h4>"Sección A"</h4>
+    <!-- Contenedor para los espacios de la Sección A -->
+    <div class="container">
+        <!-- Definición de componentes personalizados parking-spot para la Sección A -->
+        <parking-spot id="A1" spot-name="A1"></parking-spot>
+        <parking-spot id="A2" spot-name="A2"></parking-spot>
+        <parking-spot id="A3" spot-name="A3"></parking-spot>
+        <parking-spot id="A4" spot-name="A4"></parking-spot>
+        <parking-spot id="A5" spot-name="A5"></parking-spot>
+        <parking-spot id="A6" spot-name="A6"></parking-spot>
+    </div>
+
+    <!-- Subtítulo para la Sección B -->
+    <h4>"Sección B"</h4>
+    <!-- Contenedor para los espacios de la Sección B -->
+    <div class="container">
+        <!-- Definición de componentes personalizados parking-spot para la Sección B -->
+        <parking-spot id="B1" spot-name="B1"></parking-spot>
+        <parking-spot id="B2" spot-name="B2"></parking-spot>
+        <parking-spot id="B3" spot-name="B3"></parking-spot>
+        <parking-spot id="B4" spot-name="B4"></parking-spot>
+        <parking-spot id="B5" spot-name="B5"></parking-spot>
+        <parking-spot id="B6" spot-name="B6"></parking-spot>
+    </div>
+
+    <!-- Template para el componente personalizado parking-spot -->
+    <template id="parking-spot-template">
+        <style>
+            /* Estilos para el host del componente */
+            :host {
+                display: block;
+                border: 1px solid #ccc;
+                padding: 16px;
+                margin-bottom: 16px;
+                border-radius: 8px;
+                background-color: #f9f9f9;
+            }
+    
+            /* Estilos para el formulario */
+            form {
+                display: flex;
+                flex-direction: column;
+            }
+    
+            /* Margen superior para las etiquetas del formulario */
+            label {
+                margin-top: 8px;
+            }
+    
+            /* Estilos para los campos de entrada */
+            input {
+                margin-bottom: 8px;
+                padding: 8px;
+                border-radius: 4px;
+                border: 1px solid #ccc;
+            }
+    
+            /* Estilos para los botones */
+            button {
+                padding: 10px;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+            }
+    
+            /* Estilos para el botón cuando el espacio está disponible */
+            button.disponible {
+                background-color: green;
+                color: white;
+            }
+    
+            /* Estilos para el botón cuando el espacio está ocupado */
+            button.ocupado {
+                background-color: red;
+                color: white;
+            }
+    
+            /* Estilos para el botón deshabilitado */
+            button:disabled {
+                background-color: grey;
+                cursor: not-allowed;
+            }
+        </style>
+    
+        <!-- Estructura del formulario dentro del componente -->
+        <form>
+            <!-- Nombre del espacio de estacionamiento -->
+            <h1 id="spot-name"></h1>
+            <!-- Campo para la placa del vehículo -->
+            <label for="placa">Placa:</label>
+            <input type="text" id="placa" name="placa" required>
+    
+            <!-- Campo para la marca del vehículo -->
+            <label for="marca">Marca:</label>
+            <input type="text" id="marca" name="marca" required>
+    
+            <!-- Campo para el color del vehículo -->
+            <label for="color">Color:</label>
+            <input type="text" id="color" name="color" required>
+    
+            <!-- Campo para la hora de ingreso -->
+            <label for="hora_ingreso">Hora de Ingreso (HH:MM):</label>
+            <input type="time" id="hora_ingreso" name="hora_ingreso" required>
+    
+            <!-- Campo para la hora de salida -->
+            <label for="hora_salida">Hora de Salida (HH:MM):</label>
+            <input type="time" id="hora_salida" name="hora_salida" required>
+    
+            <!-- Campo para mostrar el cobro calculado, solo lectura -->
+            <label for="cobro">Cobro ($):</label>
+            <input type="text" id="cobro" name="cobro" readonly>
+    
+            <!-- Botón para cambiar el estado del espacio de estacionamiento -->
+            <button type="button" id="estado_btn" class="disponible" disabled>Disponible</button>
+        </form>
+    </template>
+
+    <!-- Enlace al archivo JavaScript con el componente personalizado -->
+    <script src="/parking.js" type="module"></script>
+</body>
+</html>
 
