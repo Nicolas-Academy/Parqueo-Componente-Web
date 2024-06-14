@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <title>Informe de Datos</title>
+</head>
+<body>
+    <h1>Informe de Datos</h1>
+    <div id="report-content"></div>
+
+    <button id="backButton">Volver atrás</button>
+
+    <script>
+        function displayReport() {
+            const registro = JSON.parse(localStorage.getItem('registro'));
+            const reportContent = document.getElementById('report-content');
+
+            reportContent.innerHTML = `
+                <p>Total Ingresos: ${registro.totalIngresos}</p>
+                <p>Total Espacios Ocupados: ${registro.totalOcupados}</p>
+                <p>Vehículos Actuales: ${registro.vehiculosActuales.join(', ')}</p>
+            `;
+        }
+
+        window.onload = displayReport;
+
+        // Script para redirigir a index.html
+        document.getElementById('backButton').addEventListener('click', () => {
+            window.location.href = 'index.html';
+        });
+    </script>
+    <script src="/registro.js"></script>
+</body>
+</html>
