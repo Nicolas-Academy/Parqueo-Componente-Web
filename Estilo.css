@@ -1,0 +1,32 @@
+body {
+    background-image: url('/Login/img/login-parqueo.avif'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+h2{
+    color: white;
+}
+
+#login-form, #welcome-message {
+    max-width: 300px;
+    margin: auto;
+    padding: 20px;
+    text-align: center;
+    margin-top: 100px;
+}
+
+input, select, button {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: rgba(255, 174, 0, 0.815);
+}
