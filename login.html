@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es"> 
+<head>
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Estacionamiento</title> <!-- Título de la página que aparecerá en la pestaña del navegador -->
+    <link rel="stylesheet" href="/Login/Estilo.css"> <!-- Vincula el archivo de estilos CSS externo -->
+</head>
+<body>
+    <!-- Formulario de inicio de sesión -->
+    <div id="login-form">
+        <h2>Inicio de Sesión</h2> <!-- Título del formulario de inicio de sesión -->
+        <input type="text" id="username" placeholder="Usuario" required> <!-- Campo de entrada para el nombre de usuario -->
+        <input type="password" id="password" placeholder="Contraseña" required> <!-- Campo de entrada para la contraseña -->
+        <button onclick="login()">Iniciar Sesión</button> <!-- Botón para iniciar sesión que llama a la función login() -->
+    </div>
+    
+    <!-- Mensaje de bienvenida que se muestra después de iniciar sesión -->
+   <div id="welcome-message" style="display:none;">
+        <h2 id="welcome-text"></h2> <!-- Texto de bienvenida que se actualizará dinámicamente -->
+        <button onclick="logout()">Cerrar Sesión</button> <!-- Botón para cerrar sesión que llama a la función logout() -->
+    </div>
+ 
+    <script src="/Login/app.js"></script> <!-- Vincula el archivo JavaScript externo -->
+</body>
+</html>
